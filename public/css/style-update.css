@@ -1,0 +1,124 @@
+.loading-screen-wrapper,
+.loading-screen-bg {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    left: 0;
+    top: 0;
+}
+.loading-screen-wrapper {
+    z-index: 10001;
+    display: none;
+}
+.loading-screen-bg {
+    background-color: #fff;
+    opacity: .95;
+}
+.loading-screen-content {
+    position: relative;
+    top: 25%;
+}
+.loading-screen-hd, .loading-screen .progress {
+    margin-bottom: 3rem;
+}
+.loading-screen-content .progress {
+    margin: 0 auto 3rem;
+}
+.info-block-wrapper .info-block-item {
+    margin-bottom: 1rem;
+}
+.info-block-wrapper .info-block-item:not(:last-child) {
+    margin-right: 1rem;
+}
+.overview-hd {
+    line-height: 230px;
+    margin-right: 2rem;
+    text-align: right;
+    position: relative;
+}
+.overview-hd .fa {
+    display: inline-block;
+    vertical-align: middle;
+    margin-top: -2rem;
+}
+.overview-hd .penalty-risk-amount {
+    display: block;
+    font-size: 5.2rem;
+    font-weight: bold;
+    position: absolute;
+    right: 11rem;
+    top: -8rem;
+}
+
+@media screen and (max-width: 991px) {
+    .overview-hd {
+        padding-top: 7rem;
+        line-height: normal;
+        margin-right: 0;
+        text-align: center;
+    }
+    .overview-hd .penalty-risk-amount {
+        display: block;
+        font-size: 5.2rem;
+        right: auto;
+        left: 50%;
+        margin-left: -4rem;
+        top: -1rem;
+    }
+    #pieGoogleChart {
+        margin: 0 auto;
+        display: block;
+    }
+}
+.project-analytic {
+    width: 440px;
+    margin-bottom: 1.5rem;
+    position: relative;
+}
+.project-analytic-right {
+    margin-left: auto;
+}
+.project-analytic .fa {
+    font-size: 2.3rem;
+    display: inline-block;
+    width: 3rem;
+}
+.project-analytic-hd {
+    font-size: 2.8rem;
+}
+a.project-analytic-hd:hover {
+    text-decoration: underline;
+}
+.project-analytic .label {
+    display: inline-block;
+    font-size: 1.6rem;
+    vertical-align: top;
+    margin: .3rem 0 0 2rem;
+}
+@media screen and (max-width: 1199px) {
+    .project-analytic {
+        width: auto;
+    }
+    .project-analytic .fa {
+        font-size: 1.6rem;
+    }
+    .project-analytic-hd {
+        font-size: 2.2rem;
+    }
+}
+.row-cleanup-btn {
+    margin-top: 3rem;
+}
+.panel-heading-right-btn {
+    position: relative;
+    padding-top: .7rem;
+}
+.dropdown-wrapper {
+    position: relative;
+}
+
+/* Overwriting table.css */
+.tooltip.top {
+    background: none;
+    border: none;
+}

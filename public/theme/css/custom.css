@@ -1,0 +1,303 @@
+.select-csv-backlink-types li>label {
+    display: block;
+    padding: 3px 20px;
+}
+.progress.runs_too_long {
+    width: 75%;
+    margin-right:5%;
+    float: left;
+}
+
+#subscription-list tr.current {
+    background: #d2ffd1;
+}
+
+.disavow_tr_red {
+    background-color: #ff6c60 !important;
+    color: #ffffff;
+}
+.buttons_panel {
+    background-color: #fff;
+    padding-top: 34px;
+    padding-bottom: 10px;
+    text-align: center;
+    margin-bottom: 20px;
+    /*margin-bottom: 10px;*/
+    /*margin-top: 7px;*/
+}
+
+.p-details .buttons_panel {
+    padding: 0;
+    text-align: center;
+    margin-bottom: 10px;
+    margin-top: 7px;
+}
+
+.campaign-socal-details ul > li {
+    line-height: 35.2px;
+}
+
+.campaign-socal-details ul strong {
+    font-size: 15px;
+}
+
+.ellipisis_new {
+    white-space: nowrap;
+    text-overflow:ellipsis;
+    overflow: hidden;
+    max-width:150px;
+    vertical-align: middle;
+}
+
+.buttons_panel .fa-refresh {
+    margin-right: 5px;
+}
+
+
+
+/*Campaign not finished*/
+.progress.runs_too_long {
+    width: 75%;
+    margin-right:5%;
+    float: left;
+}
+#main-content > .wrapper {
+    position: relative;
+}
+#main-content > .wrapper > .loading-wrapper {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    min-height: 100%;
+    display: block;
+    z-index: 1000;
+    background: #fff;
+    opacity: .95;
+    text-align: center;
+}
+
+#main-content > .wrapper > .loading-wrapper > p {
+    padding: 85px 100px 20px;
+    text-align: center;
+    font-size: 16px;
+}
+
+#main-content > .wrapper > .loading-wrapper > p.progress-bottom-text {
+    padding: 15px 100px 20px;
+    text-align: center;
+    font-size: 16px;
+}
+
+#main-content > .wrapper > .loading-wrapper .loader-progress {
+    width: 500px;
+    margin: 0 auto;
+    display: block;
+}
+
+th.center {
+    text-align: center;
+}
+
+.test.test.tetst {
+    width: 100%;
+}
+
+.vertical-alignment-helper {
+    display:table;
+    height: 100%;
+    width: 100%;
+}
+.vertical-alignment-helper .modal-dialog {
+    /* To center vertically */
+    display: table-cell;
+    vertical-align: middle;
+}
+.modal-content {
+    /* Bootstrap sets the size of the modal in the modal-dialog class, we need to inherit it */
+    width:inherit;
+    height:inherit;
+    /* To center horizontally */
+    margin: 0 auto;
+}
+
+.with_selected {
+    margin-top: 17px;
+}
+
+
+/*=== Backlinkcontrol ===*/
+.limit-info {
+    height: 60px;
+    line-height: 60px;
+    font-size: 16px;
+    position: relative;
+    display: inline-block;
+    margin-left: -15%;
+}
+
+.limit-info .get-more {
+    position: absolute;
+    top: 10px;
+    background-color: #57c8f2;
+    color: #fff;
+    line-height: 1.4;
+    padding: 0 10px;
+    font-size: 14px;
+    border-radius: 4px;
+}
+
+.limit-info .count {
+    font-weight: bold;
+    font-style: italic;
+}
+
+.tell-about-us {
+    margin-top: 30px;
+    margin-bottom: 25px;
+}
+
+.share-block {
+    width: 20%;
+    background-color: #fff;
+    margin-left: 15px;
+    margin-right: 15px;
+    display: inline-block;
+    text-align: left;
+    padding: 5px 0;
+    border: 0;
+    outline: 0;
+}
+
+.share-block .fa {
+    text-align: left;
+    font-size: 30px;
+    margin-left: 20px;
+    margin-top: -30px;
+    display: inline-block;
+    vertical-align: middle;
+    color: #667fa0;
+}
+
+.share-block:hover .fa{
+    color: #2A3542;
+}
+
+.share-info {
+    line-height: 1.2;
+    display: inline-block;
+    height: 40px;
+    margin-left: 20%;
+    font-size: 18px;
+}
+
+.share-info span {
+    color: #797979;
+}
+
+.share-info .b{
+    font-size: 14px;
+}
+
+.pricing-table.current {
+    background: #f77b6f;
+    color: #fff;
+}
+
+
+.pricing-table.current h1 {
+    padding-top: 15px;
+    padding-bottom: 10px;
+    margin-top: 15px;
+}
+
+.pricing-table.current h2 {
+    background-color: #d76b61;
+}
+
+.pricing-table.current .btn {
+    background-color: #d76b61;
+}
+
+.tablebar {
+    color: #fff;
+    background: #b3bac2;
+    border-radius: .25em 0 0;
+}
+
+.tablebar-group {
+    padding: 1em;
+    margin: 0;
+}
+
+.inputbuttongroup, .inputbuttongroup>* {
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+}
+
+.inputbuttongroup>* {
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+    margin: 0;
+}
+.chart-select {
+    color: #262d35;
+    background-color: #fff;
+    border: 0;
+    border-radius: .25em;
+    padding-left: 10px;
+}
+.chart-select.interval {
+    margin-right: 40px;
+}
+
+.inputbuttongroup-label {
+    padding: 0 1em;
+    white-space: nowrap;
+    background: #98a3af;
+    height: 40px;
+}
+
+.tablebar-group>*, .tablebar>* {
+    margin: 0;
+    width: auto;
+}
+
+.clean-table td {
+    color: #333;
+    border-bottom: 1px dotted #ccc;
+    font-size: 8.5pt;
+    padding: 0.8em 10px;
+}
+
+.clean-table .anchorText {
+    color: #090;
+}
+
+.clean-table th {
+    border-bottom: 2px solid #ccc;
+    color: #999;
+    vertical-align: bottom;
+}
+
+.clean-table .technicalTerm, .clean-table .merged-header {
+    border: none;
+}
+
+.table-container {
+    padding: 10px 0;
+}
+
+.after_chart_t {
+    line-height: 4em;
+}
+
+.table-fixed {
+    table-layout: fixed;
+}
+
+.table-fixed td {
+    overflow: hidden;
+}

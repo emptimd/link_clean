@@ -1,0 +1,171 @@
+// 1. Transition Mixin
+// 2. Vertical Align Mixin
+// 3. Full Width, Full Height, Full Min Height Mixin
+// 4. Width, Height, MaxHeight, MaxWidth Mixin
+// 5. Border, BorderRadius Mixin
+// 6. Padding, Margin Mixin
+
+// Transition Mixin
+@function prefix($property, $prefixes: (webkit moz o ms)) {
+  $vendor-prefixed-properties: transform background-clip background-size;
+  $result: ();
+  @each $prefix in $prefixes {
+    @if index($vendor-prefixed-properties, $property) {
+      $property: -#{$prefix}-#{$property}
+    }
+    $result: append($result, $property);
+  }
+  @return $result;
+}
+
+@function trans-prefix($transition, $prefix: moz) {
+  $prefixed: ();
+  @each $trans in $transition {
+    $prop-name: nth($trans, 1);
+    $vendor-prop-name: prefix($prop-name, $prefix);
+    $prop-vals: nth($trans, 2);
+    $prefixed: append($prefixed, ($vendor-prop-name $prop-vals), comma);
+  }
+
+  @return $prefixed;
+}
+
+@mixin transition($values...) {
+  $transitions: ();
+  @each $declaration in $values {
+    $prop: nth($declaration, 1);
+    $prop-opts: ();
+    $length: length($declaration);
+    @for $i from 2 through $length {
+      $prop-opts: append($prop-opts, nth($declaration, $i));
+    }
+    $trans: ($prop, $prop-opts);
+    $transitions: append($transitions, $trans, comma);
+  }
+
+  -webkit-transition: trans-prefix($transitions, webkit); /* Saf3.2+, Chrome */
+  -moz-transition: trans-prefix($transitions, moz); /* FF4+ */
+  -ms-transition: trans-prefix($transitions, ms); /* IE10? */
+  -o-transition: trans-prefix($transitions, o); /* Opera 10.5+ */
+  transition: $values;
+}
+
+// Vertical Align Mixin
+@mixin vertical-align {
+  position: relative;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+
+// Full Width, Full Height, Full Min Height Mixin
+.full-width {
+  width: 100% !important;
+}
+
+.full-height {
+  height: 100% !important;
+}
+
+.full-min-height {
+  min-height: 100% !important;
+}
+
+// Width, Height, MaxHeight, MaxWidth Mixin
+@each $width in 25, 35, 50, 75, 100, 125, 150, 175, 200 {
+  .width#{$width} {
+    width: #{$width}px !important;
+  }
+}
+
+@each $height in 25, 35, 50, 75, 100, 125, 150, 175, 200 {
+  .height#{$height} {
+    height: #{$height}px !important;
+  }
+}
+
+@each $maxheight in 25, 50, 75, 100, 125, 150, 175, 200 {
+  .max-height#{$maxheight} {
+    max-height: #{$maxheight}px !important;
+  }
+}
+
+@each $maxwidth in 25, 50, 75, 100, 125, 150, 175, 200 {
+  .max-width#{$maxwidth} {
+    max-width: #{$maxwidth}px !important;
+  }
+}
+
+// Border, BorderRadius Mixin
+@each $border in 1, 2, 3, 4, 5 {
+  .border#{$border} {
+    border-width: #{$border}px !important;
+    border-style: solid !important;
+  }
+}
+
+@each $borderradius in 0, 1, 2, 3, 4, 5, 6 {
+  .border-r#{$borderradius} {
+    border-radius: #{$borderradius}px !important;
+  }
+  .border-b-left-r#{$borderradius} {
+    border-bottom-left-radius: #{$borderradius}px !important;
+  }
+  .border-b-right-r#{$borderradius} {
+    border-bottom-right-radius: #{$borderradius}px !important;
+  }
+}
+
+// Padding, Margin Mixin
+@each $padding in 5, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 110, 120, 130, 140, 150 {
+  .padding-#{$padding} {
+    padding: #{$padding}px !important;
+  }
+  .padding-top-#{$padding} {
+    padding-top: #{$padding}px !important;
+  }
+  .padding-bottom-#{$padding} {
+    padding-bottom: #{$padding}px !important;
+  }
+  .padding-left-#{$padding} {
+    padding-left: #{$padding}px !important;
+  }
+  .padding-right-#{$padding} {
+    padding-right: #{$padding}px !important;
+  }
+  .padding-vertically-#{$padding} {
+    padding-top: #{$padding}px !important;
+    padding-bottom: #{$padding}px !important;
+  }
+  .padding-horizontally-#{$padding} {
+    padding-left: #{$padding}px !important;
+    padding-right: #{$padding}px !important;
+  }
+}
+
+@each $margin in -100, -90, -80, -70, -60, -50, -40, -30, -20, -10, 0, 5, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 110, 120, 130, 140, 150 {
+  .margin-#{$margin} {
+    margin: #{$margin}px !important;
+  }
+  .margin-top-#{$margin} {
+    margin-top: #{$margin}px !important;
+  }
+  .margin-bottom-#{$margin} {
+    margin-bottom: #{$margin}px !important;
+  }
+  .margin-left-#{$margin} {
+    margin-left: #{$margin}px !important;
+  }
+  .margin-right-#{$margin} {
+    margin-right: #{$margin}px !important;
+  }
+  .margin-vertically-#{$margin} {
+    margin-top: #{$margin}px !important;
+    margin-bottom: #{$margin}px !important;
+  }
+  .margin-horizontally-#{$margin} {
+    margin-left: #{$margin}px !important;
+    margin-right: #{$margin}px !important;
+  }
+}

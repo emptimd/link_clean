@@ -1,0 +1,31 @@
+<IfModule mod_rewrite.c>
+    <IfModule mod_negotiation.c>
+        Options -MultiViews
+    </IfModule>
+
+    RewriteEngine On
+
+    # Old reports
+    RewriteRule ^/site/loadingscreen/id/(.*)$ http://retired.linkquidator.com/site/loadingscreen/id/$1 [L,R=301]
+    RewriteRule ^/site/loadingscreen/id/(.*)$ http://retired.linkquidator.com/site/loadingscreen/id/$1 [NC,P]
+
+    RewriteRule ^site/responsepart/id/(.*)$ http://retired.linkquidator.com/site/responsepart/id/$1 [L,R=301]
+    RewriteRule ^site/responsepart/id/(.*)$ http://retired.linkquidator.com/site/responsepart/id/$1 [NC,P]
+
+    # Redirect linkquidator2.com -> linkquidator.com
+    RewriteCond %{HTTP_HOST} linkquidator2.com|www.linkquidator2.com$ [NC]
+    RewriteRule ^(.*)$ http://linkquidator.com/$1 [L,R=301]
+
+    # Redirecto www.linkquidator.com -> linkquidator.com
+    RewriteCond %{HTTP_HOST} ^www\.linkquidator\.com [NC]
+    RewriteRule ^(.*)$ http://linkquidator.com/$1 [L,R=301]
+
+    # Redirect Trailing Slashes If Not A Folder...
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteRule ^(.*)/$ /$1 [L,R=301]
+
+    # Handle Front Controller...
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteRule ^ index.php [L]
+</IfModule>
